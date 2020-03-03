@@ -1,11 +1,6 @@
-# Ktor on Google App Engine Standard
+# Android Coding Dojo
 
-To download and run this sample, download the code with the commands below, and
-then follow the steps in the [Community Tutorial][tutorial].
+ Go to https://androidcodingdojo.appspot.com/
 
-```sh
-git clone git@github.com:GoogleCloudPlatform/kotlin-samples
-cd kotlin-samples/appengine/ktor
-```
+ BackEnd made with Ktor
 
-[tutorial]: https://cloud.google.com/community/tutorials/kotlin-ktor-app-engine-java8
