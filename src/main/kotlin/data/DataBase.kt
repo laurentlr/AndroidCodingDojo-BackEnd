@@ -14,5 +14,6 @@ class DataBase {
 
         val actions = mutableListOf<Action>()
 
+        val fcmTokens = mutableListOf<String>()
     }
 }

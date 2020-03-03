@@ -46,12 +46,18 @@ fun Routing.welcome() {
                                 +"Users"
                             }
                         }
+
                         li {
                             +"Actions https://androidcodingdojo.appspot.com/actions"
                         }
                     }
                 }
                 p { }
+
+                a("https://github.com/laurentlr/AndroidCodingDojo-BackEnd") {
+                    target = ATarget.blank
+                    +"backend github project"
+                }
                 div { +"By Laurent Russier & Sylvain Choquet" }
             }
         }
