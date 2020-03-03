@@ -4,13 +4,17 @@ import io.ktor.application.call
 import io.ktor.html.respondHtml
 import io.ktor.routing.Routing
 import io.ktor.routing.get
+import kotlinx.html.ATarget
+import kotlinx.html.a
 import kotlinx.html.body
 import kotlinx.html.div
 import kotlinx.html.h1
 import kotlinx.html.h2
 import kotlinx.html.head
+import kotlinx.html.li
 import kotlinx.html.p
 import kotlinx.html.title
+import kotlinx.html.ul
 
 fun Routing.welcome() {
 
@@ -33,8 +37,22 @@ fun Routing.welcome() {
                     p { +"Amazing stuff" }
 
                 }
-
-                div { +"<i>By Laurent Russier & Sylvain Choquet</i>" }
+                p { }
+                p {
+                    ul {
+                        li {
+                            a("https://androidcodingdojo.appspot.com/users") {
+                                target = ATarget.blank
+                                +"Users"
+                            }
+                        }
+                        li {
+                            +"Actions https://androidcodingdojo.appspot.com/actions"
+                        }
+                    }
+                }
+                p { }
+                div { +"By Laurent Russier & Sylvain Choquet" }
             }
         }
     }
