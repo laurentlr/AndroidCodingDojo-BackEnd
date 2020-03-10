@@ -38,6 +38,9 @@ dependencies {
 
     providedCompile "com.google.appengine:appengine:$appengine_version"
     implementation "io.ktor:ktor-gson:$ktor_version"
+
+    //push
+    implementation 'com.google.firebase:firebase-admin:6.12.2'
 }
 
 kotlin.experimental.coroutines = 'enable'
