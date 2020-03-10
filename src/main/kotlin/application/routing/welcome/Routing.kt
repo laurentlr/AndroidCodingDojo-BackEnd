@@ -27,6 +27,13 @@ fun Routing.welcome() {
                 div {
                     h1 { +"Welcome to this Android Coding Dojo" }
 
+                    h2 { +"Before the Dojo" }
+                    p { +"Set up your environment" }
+                    a("https://gist.github.com/laurentlr/e05d81812fab6aeb724ea99781b25d05") {
+                        target = ATarget.blank
+                        +"set up"
+                    }
+
                     h2 { +"Part I" }
                     p { +"Simple list" }
 

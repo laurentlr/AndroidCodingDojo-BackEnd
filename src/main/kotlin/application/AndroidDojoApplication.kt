@@ -31,7 +31,7 @@ fun Application.main() {
 
         user()
         actions()
-        token()
+        //token()
     }
 }
 
