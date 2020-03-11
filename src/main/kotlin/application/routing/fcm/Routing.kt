@@ -8,6 +8,7 @@ import io.ktor.application.call
 import io.ktor.request.receive
 import io.ktor.response.respond
 import io.ktor.routing.Routing
+import io.ktor.routing.delete
 import io.ktor.routing.get
 import io.ktor.routing.post
 
@@ -35,6 +36,13 @@ fun Routing.token() {
                     .fcmTokens
                     .add(it)
         }
+    }
+
+    delete("/token/{id?}") {
+        call.parameters["id"]?.let { tokenId ->
+            DataBase.fcmTokens.removeIf { it == tokenId }
+        }
+        call.respond(Response("Done"))
     }
 
 }
