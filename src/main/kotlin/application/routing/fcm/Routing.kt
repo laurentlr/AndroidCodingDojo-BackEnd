@@ -1,6 +1,8 @@
 package application.routing.fcm
 
+import com.google.gson.Gson
 import data.DataBase
+import domain.Response
 import domain.Token
 import io.ktor.application.call
 import io.ktor.request.receive
@@ -27,7 +29,7 @@ fun Routing.token() {
             responseMessage = "Error, add header Content-Type:application/json or Token data is wrong !!! $e"
         }
 
-        call.respond(responseMessage)
+        call.respond(Gson().toJson(Response(responseMessage)))
         token?.let {
             DataBase
                     .fcmTokens

@@ -38,12 +38,12 @@ fun Application.main() {
 
         user()
         actions()
-        //token()
+        token()
     }
 }
 
 fun initFireBase() {
-    val serviceAccount = FileInputStream("path/to/serviceAccountKey.json")
+    val serviceAccount = FileInputStream("fcm.json")
 
     val options = FirebaseOptions
             .Builder()
