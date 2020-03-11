@@ -8,6 +8,7 @@ import io.ktor.application.call
 import io.ktor.request.receive
 import io.ktor.response.respond
 import io.ktor.routing.Routing
+import io.ktor.routing.delete
 import io.ktor.routing.get
 import io.ktor.routing.post
 
@@ -22,7 +23,11 @@ fun Routing.actions() {
         lateinit var message: String
 
         try {
-            action = call.receive()
+            val receivedAction = call.receive<Action>()
+            action = Action(
+                    description = receivedAction.description,
+                    userId = receivedAction.userId
+            )
             message = "Success"
         } catch (e: Exception) {
             message = "Error, add header Content-Type:application/json or Action data is wrong !!! $e"
@@ -34,6 +39,13 @@ fun Routing.actions() {
             DataBase.actions.add(it)
             Fcm.onActionAdded(it)
         }
+    }
+
+    delete("/action/{id?}") {
+        call.parameters["id"]?.let { actionId ->
+            DataBase.actions.removeIf { it.id == actionId }
+        }
+        call.respond(Response("Done"))
     }
 
 }
